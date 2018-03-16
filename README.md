@@ -26,7 +26,7 @@ Optimization Enabled: gcc -S -masm=intel gcc-instruction-reorder.cpp **-O3**
 
     call	___main
     mov	eax, DWORD PTR _b
-    mov	DWORD PTR _b, 0 b before a
+    mov	DWORD PTR _b, 0 // b before a
     add	eax, 1
     mov	DWORD PTR _a, eax
     xor	eax, eax
