@@ -1,4 +1,4 @@
-# MemoryReorderInCPP
+# Memory Reorder In CPP
 
 Consider the simple program that programmer would like to assign to variable a and then b.  
 The compiler GCC will change memory order to assign variable b before a.  
@@ -25,8 +25,8 @@ Optimization Disabled: gcc -S -masm=intel gcc-instruction-reorder.cpp
 Optimization Enabled: gcc -S -masm=intel gcc-instruction-reorder.cpp **-O3**
 
     call	___main
-    mov	eax, DWORD PTR _b // b before a
-    mov	DWORD PTR _b, 0
+    mov	eax, DWORD PTR _b
+    mov	DWORD PTR _b, 0 b before a
     add	eax, 1
     mov	DWORD PTR _a, eax
     xor	eax, eax
