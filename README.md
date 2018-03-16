@@ -18,14 +18,14 @@ Optimization Disabled: gcc -S -masm=intel gcc-instruction-reorder.cpp
     mov	eax, DWORD PTR _b
     add	eax, 1
     mov	DWORD PTR _a, eax
-    **mov	DWORD PTR _b, 0 // b after a**
+    mov	DWORD PTR _b, 0 // b after a
     mov	eax, 0
     leave
 
 Optimization Enabled: gcc -S -masm=intel gcc-instruction-reorder.cpp **-O3**
 
     call	___main
-    **mov	eax, DWORD PTR _b // b before a**
+    mov	eax, DWORD PTR _b // b before a
     mov	DWORD PTR _b, 0
     add	eax, 1
     mov	DWORD PTR _a, eax
